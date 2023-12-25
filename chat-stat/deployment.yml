@@ -12,12 +12,12 @@ spec:
   template:
     metadata:
       labels:
-        app: 695434033664.dkr.ecr.us-east-1.amazonaws.com/fomiller-chat-stat-api:latest
+        app: chat-stat-swolenesss
         channel: swolenesss
     spec:
       containers:
       - name: chat-stat
-        image: chat-stat:local  # Use the local image tag
+        image: 695434033664.dkr.ecr.us-east-1.amazonaws.com/fomiller-chat-stat-api:latest
         env:
           - name: REDIS_HOST
             value:  redis-service.chat-stat.svc.cluster.local

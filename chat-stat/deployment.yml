@@ -23,3 +23,29 @@ spec:
             value:  redis-service.chat-stat.svc.cluster.local
           - name: TWITCH_CHANNEL
             value: swolenesss
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat-stat-paymoneywubby
+  namespace: fomiller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chat-stat-paymoneywubby
+      channel: paymoneywubby
+  template:
+    metadata:
+      labels:
+        app: chat-stat-paymoneywubby
+        channel: paymoneywubby
+    spec:
+      containers:
+      - name: chat-stat
+        image: 695434033664.dkr.ecr.us-east-1.amazonaws.com/fomiller-chat-stat-api:latest
+        env:
+          - name: REDIS_HOST
+            value:  redis-service.chat-stat.svc.cluster.local
+          - name: TWITCH_CHANNEL
+            value: paymoneywubby

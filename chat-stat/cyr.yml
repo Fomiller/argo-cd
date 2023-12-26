@@ -32,5 +32,5 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: twitch-credentials
-                key: client_ID
+                key: client_id
 

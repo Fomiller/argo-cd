@@ -20,7 +20,10 @@ spec:
         image: 695434033664.dkr.ecr.us-east-1.amazonaws.com/fomiller-chat-stat-api:latest
         env:
           - name: REDIS_HOST
-            value:  redis-service.chat-stat.svc.cluster.local
+            valueFrom:
+              secretKeyRef:
+                name: redis-endpoint
+                key: endpoint
           - name: TWITCH_CHANNEL
             value: cyr
           - name: TWITCH_CLIENT_SECRET

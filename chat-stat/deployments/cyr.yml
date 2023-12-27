@@ -4,7 +4,7 @@ metadata:
   name: chat-stat-cyr
   namespace: fomiller
 spec:
-  minreplicas: 1
+  maxReplicas: 1
   selector:
     matchLabels:
       app: chat-stat-cyr

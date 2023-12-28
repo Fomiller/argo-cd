@@ -9,7 +9,7 @@ spec:
   selector:
     app: redisinsight
   ports:
-    - port: 8001
+    - port: 80
       targetPort: 8001
 ---
 # RedisInsight deployment with name 'redisinsight'

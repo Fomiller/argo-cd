@@ -33,5 +33,5 @@ spec:
               service:
                 name: redisinsight-service
                 port:
-                  number: 8001
+                  number: 443
             pathType: Prefix

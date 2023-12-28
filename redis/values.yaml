@@ -37,7 +37,7 @@ nameOverride: ""
 fullnameOverride: ""
 ## @param namespaceOverride String to fully override common.names.namespace
 ##
-namespaceOverride: ""
+namespaceOverride: "fomiller"
 ## @param commonLabels Labels to add to all deployed objects
 ##
 commonLabels: {}
@@ -1952,7 +1952,9 @@ sysctl:
 ## @param useExternalDNS.suffix The DNS suffix utilized when `external-dns` is enabled.  Note that we prepend the suffix with the full name of the release.
 ##
 useExternalDNS:
-  enabled: false
+  enabled: true
   suffix: ""
   annotationKey: external-dns.alpha.kubernetes.io/
-  additionalAnnotations: {}
+  additionalAnnotations:
+    external-dns.alpha.kubernetes.io/hostname: 'redis.fomiller-cluster.dev.aws.fomillercloud.com'
+

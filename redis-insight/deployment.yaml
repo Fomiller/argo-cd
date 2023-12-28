@@ -82,6 +82,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: redisinsight-pv-claim
+  namespace: fomiller
   labels:
     app: redisinsight
 spec:
@@ -90,7 +91,7 @@ spec:
   resources:
     requests:
       storage: 2Gi
-  storageClassName: default
+  storageClassName: redisinsight-efs-sc
 ---
 # RedisInsight deployment with name 'redisinsight'
 apiVersion: apps/v1

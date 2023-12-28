@@ -40,8 +40,8 @@ spec:
         image: redislabs/redisinsight:latest #repo/image
         imagePullPolicy: IfNotPresent #Always pull image
         env:
-          - name: RIPROXYENABLE
-            value: 'true'
+          - name: RITRUSTEDORIGINS
+            value: https://*.dev.aws.fomillercloud.com
         volumeMounts:
         - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
           mountPath: /db

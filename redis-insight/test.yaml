@@ -41,7 +41,7 @@ spec:
         imagePullPolicy: IfNotPresent #Always pull image
         env:
           - name: RITRUSTEDORIGINS
-            value: https://*.dev.aws.fomillercloud.com
+            value: 'https://redis-insight.dev.aws.fomillercloud.com'
         volumeMounts:
         - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
           mountPath: /db

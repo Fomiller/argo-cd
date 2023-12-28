@@ -31,7 +31,7 @@ spec:
           - path: /
             backend:
               service:
-                name: redis-insight-service
+                name: redisinsight-service
                 port:
                   number: 80
             pathType: Prefix

@@ -36,7 +36,6 @@ spec:
         app: redisinsight #label for pod/s
     spec:
       containers:
-
       - name:  redisinsight #Container name (DNS_LABEL, unique)
         image: redislabs/redisinsight:latest #repo/image
         imagePullPolicy: IfNotPresent #Always pull image
@@ -46,6 +45,9 @@ spec:
         ports:
         - containerPort: 8001 #exposed container port and protocol
           protocol: TCP
+        env:
+          - name: RIPROXYENABLE
+            value: true
       volumes:
       - name: db
         emptyDir: {} # node-ephemeral volume https://kubernetes.io/docs/concepts/storage/volumes/#emptydir

@@ -39,15 +39,15 @@ spec:
       - name:  redisinsight #Container name (DNS_LABEL, unique)
         image: redislabs/redisinsight:latest #repo/image
         imagePullPolicy: IfNotPresent #Always pull image
+        env:
+          - name: RIPROXYENABLE
+            value: true
         volumeMounts:
         - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
           mountPath: /db
         ports:
         - containerPort: 8001 #exposed container port and protocol
           protocol: TCP
-        env:
-          - name: RIPROXYENABLE
-            value: true
       volumes:
       - name: db
         emptyDir: {} # node-ephemeral volume https://kubernetes.io/docs/concepts/storage/volumes/#emptydir

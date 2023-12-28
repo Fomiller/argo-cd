@@ -5,7 +5,7 @@ metadata:
   name: redisinsight-service       
   namespace: fomiller
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: redisinsight
   ports:

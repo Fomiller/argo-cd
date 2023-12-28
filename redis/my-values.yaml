@@ -4,7 +4,7 @@ master:
   persistance:
     enabled: false
   service:
-    type: Loadbalancer
+    type: LoadBalancer
     loadBalancerClass: "alb"
     annotations:
       alb.ingress.kubernetes.io/scheme: internet-facing

@@ -41,7 +41,7 @@ spec:
         imagePullPolicy: IfNotPresent #Always pull image
         env:
           - name: RIPROXYENABLE
-            value: true
+            value: 'true'
         volumeMounts:
         - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
           mountPath: /db

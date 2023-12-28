@@ -1,60 +1,60 @@
-# RedisInsight service with name 'redisinsight-service'
-apiVersion: v1
-kind: Service
-metadata:
-  namespace: fomiller
-  name: redisinsight-service       # name should not be 'redisinsight'
-                                   # since the service creates
-                                   # environment variables that
-                                   # conflicts with redisinsight
-                                   # application's environment
-                                   # variables `REDISINSIGHT_HOST` and
-                                   # `REDISINSIGHT_PORT`
-spec:
-  type: LoadBalancer
-  ports:
-    - port: 80
-      targetPort: 8001
-  selector:
-    app: redisinsight
----
-kind: StorageClass
-apiVersion: storage.k8s.io/v1
-metadata:
-  name: redisinsight-efs-sc
-provisioner: efs.csi.aws.com
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: redisinsight-efs-pv
-spec:
-  capacity:
-    storage: 5Gi
-  volumeMode: Filesystem
-  accessModes:
-  - ReadWriteMany
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: redisinsight-efs-sc
-  csi:
-    driver: efs.csi.aws.com
-    volumeHandle: fs-0eba2124a91761f7e
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: redisinsight-pv-claim
-  namespace: fomiller
-  labels:
-    app: redisinsight
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 2Gi
-  storageClassName: redisinsight-efs-sc
----
+# # RedisInsight service with name 'redisinsight-service'
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   namespace: fomiller
+#   name: redisinsight-service       # name should not be 'redisinsight'
+#                                    # since the service creates
+#                                    # environment variables that
+#                                    # conflicts with redisinsight
+#                                    # application's environment
+#                                    # variables `REDISINSIGHT_HOST` and
+#                                    # `REDISINSIGHT_PORT`
+# spec:
+#   type: LoadBalancer
+#   ports:
+#     - port: 80
+#       targetPort: 8001
+#   selector:
+#     app: redisinsight
+# ---
+# kind: StorageClass
+# apiVersion: storage.k8s.io/v1
+# metadata:
+#   name: redisinsight-efs-sc
+# provisioner: efs.csi.aws.com
+# ---
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: redisinsight-efs-pv
+# spec:
+#   capacity:
+#     storage: 5Gi
+#   volumeMode: Filesystem
+#   accessModes:
+#   - ReadWriteMany
+#   persistentVolumeReclaimPolicy: Retain
+#   storageClassName: redisinsight-efs-sc
+#   csi:
+#     driver: efs.csi.aws.com
+#     volumeHandle: fs-0eba2124a91761f7e
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: redisinsight-pv-claim
+#   namespace: fomiller
+#   labels:
+#     app: redisinsight
+# spec:
+#   accessModes:
+#     - ReadWriteOnce
+#   resources:
+#     requests:
+#       storage: 2Gi
+#   storageClassName: redisinsight-efs-sc
+# ---
 # # RedisInsight deployment with name 'redisinsight'
 # apiVersion: apps/v1
 # kind: Deployment

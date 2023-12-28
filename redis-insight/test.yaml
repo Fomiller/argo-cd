@@ -4,8 +4,6 @@ kind: Service
 metadata:
   name: redisinsight-service       
   namespace: fomiller
-  annotations:
-    alb.ingress.kubernetes.io/healthcheck-path: /
 spec:
   type: NodePort
   selector:

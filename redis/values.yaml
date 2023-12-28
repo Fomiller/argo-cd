@@ -1956,5 +1956,5 @@ useExternalDNS:
   suffix: ""
   annotationKey: external-dns.alpha.kubernetes.io/
   additionalAnnotations:
-    external-dns.alpha.kubernetes.io/hostname: 'redis.fomiller-cluster.dev.aws.fomillercloud.com'
+    hostname: 'redis.fomiller-cluster.dev.aws.fomillercloud.com'
 

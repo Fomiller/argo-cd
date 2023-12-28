@@ -29,9 +29,9 @@ spec:
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
               service:
                 name: redisinsight-service
                 port:
-                  number: 8001
-            pathType: Prefix
+                  number: 80

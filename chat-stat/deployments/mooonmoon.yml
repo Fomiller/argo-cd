@@ -33,7 +33,7 @@ spec:
               secretKeyRef:
                 name: twitch-credentials
                 key: client_id
-      - name: chat-stat-REDIS
+      - name: chat-stat-redis
         image: 695434033664.dkr.ecr.us-east-1.amazonaws.com/fomiller-chat-stat-api:latest
         env:
           - name: REDIS_HOST

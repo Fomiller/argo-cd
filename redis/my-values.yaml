@@ -24,6 +24,9 @@ replicas:
   persistance:
     enabled: false
   
+networkPolicy:
+  enabled: true
+    
 useExternalDNS:
   enabled: true
   suffix: ""

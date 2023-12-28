@@ -19,13 +19,13 @@ spec:
       - name: chat-stat
         image: 695434033664.dkr.ecr.us-east-1.amazonaws.com/fomiller-chat-stat-api:latest
         env:
-          # - name: REDIS_HOST
-          #   value:  redis-service.chat-stat.svc.cluster.local
           - name: REDIS_HOST
-            valueFrom:
-              secretKeyRef:
-                name: redis-endpoint
-                key: endpoint
+            value:  redis-service.chat-stat.svc.cluster.local
+          # - name: REDIS_HOST
+          #   valueFrom:
+          #     secretKeyRef:
+          #       name: redis-endpoint
+          #       key: endpoint
           - name: TWITCH_CHANNEL
             value: moonmoon
           - name: TWITCH_CLIENT_SECRET

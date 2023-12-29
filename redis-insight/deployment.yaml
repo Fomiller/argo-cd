@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redisinsight #deployment name
-  namespace: fomiller
+  namespace: redis
   labels:
     app: redisinsight #deployment label
 spec:

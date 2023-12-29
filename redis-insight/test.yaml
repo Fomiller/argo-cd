@@ -41,7 +41,7 @@ spec:
         imagePullPolicy: IfNotPresent #Always pull image
         env:
           - name: RITRUSTEDORIGINS
-            value: 'http://redis-insight.dev.aws.fomillercloud.com'
+            value: 'https://redis-insight.dev.aws.fomillercloud.com'
           - name: RIPROXYENABLE
             value: 't'
         volumeMounts:

@@ -37,7 +37,7 @@ spec:
     spec:
       containers:
       - name:  redisinsight #Container name (DNS_LABEL, unique)
-        image: redislabs/redisinsight:latest #repo/image
+        image: redislabs/redisinsight:2.4.0 #repo/image
         imagePullPolicy: IfNotPresent #Always pull image
         env:
           - name: RITRUSTEDORIGINS

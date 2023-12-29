@@ -1,4 +1,5 @@
 namespace: chat-stat
+compute: fargate
 channels:
   - cyr
   - paymoneywubby

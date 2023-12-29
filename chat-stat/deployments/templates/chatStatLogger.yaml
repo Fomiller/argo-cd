@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: chat-stat-{{ . }}
-  namespace: fomiller
+  namespace: chat-stat
   labels:
     compute: fargate
 spec:

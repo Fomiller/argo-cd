@@ -1,4 +1,4 @@
-# namespaceOverride: "fomiller"
+namespaceOverride: "redis"
 #   
 # master:
 #   persistance:

@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: chat-stat-{{ . }}
+  name: chat-stat-logger-{{ . }}
   namespace: chat-stat
   labels:
     compute: fargate
@@ -15,11 +15,11 @@ spec:
   template:
     metadata:
       labels:
-        app: chat-stat-{{ . }}
+        app: chat-stat-logger-{{ . }}
         channel: cyr
     spec:
       containers:
-      - name: chat-stat
+      - name: chat-stat-logger
         image: 695434033664.dkr.ecr.us-east-1.amazonaws.com/fomiller-chat-stat-api:latest
         env:
           # - name: REDIS_HOST

@@ -1,7 +1,8 @@
 namespace: chat-stat
 compute: fargate
 channels:
-  - cyr
+  # - cyr
+  - swolenesss
   # - paymoneywubby
   # - nmplol
   # - xqc

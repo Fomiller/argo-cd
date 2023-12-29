@@ -1,18 +1,21 @@
+{{- range .Values.channels }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: chat-stat-cyr
+  name: chat-stat-{{ . }}
   namespace: fomiller
+  labels:
+    compute: fargate
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: chat-stat-cyr
+      app: chat-stat-logger-{{ . }}
       channel: cyr
   template:
     metadata:
       labels:
-        app: chat-stat-cyr
+        app: chat-stat-{{ . }}
         channel: cyr
     spec:
       containers:
@@ -25,7 +28,7 @@ spec:
           #       name: redis-endpoint
           #       key: endpoint
           - name: TWITCH_CHANNEL
-            value: cyr
+            value: {{ . }}
           - name: TWITCH_CLIENT_SECRET
             valueFrom:
               secretKeyRef:
@@ -36,4 +39,5 @@ spec:
               secretKeyRef:
                 name: twitch-credentials
                 key: client_id
-
+---
+{{- end }}

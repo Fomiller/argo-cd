@@ -5,9 +5,9 @@ replicas:
   persistance:
     enabled: true
 
-# global:
-#   redis:
-#     password: "weak"
+global:
+  redis:
+    password: "password123!"
 
 image:
   repository: "redis/redis-stack-server"

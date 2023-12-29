@@ -4,19 +4,19 @@ kind: Deployment
 metadata:
   name: chat-stat-logger-{{ . }}
   namespace: {{ $.Values.namespace }}
-  labels:
-    compute: fargate
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: chat-stat-logger-{{ . }}
-      channel: cyr
+      channel: {{ . }}
+      compute: {{ $.Values.compute }}
   template:
     metadata:
       labels:
         app: chat-stat-logger-{{ . }}
-        channel: cyr
+        channel: {{ . }}
+        compute: {{ $.Values.compute }}
     spec:
       containers:
       - name: chat-stat-logger

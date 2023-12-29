@@ -27,6 +27,8 @@ spec:
           #     secretKeyRef:
           #       name: redis-endpoint
           #       key: endpoint
+          - name: REDIS_HOST
+            value: redis-db-master.redis.svc.cluster.local
           - name: TWITCH_CHANNEL
             value: {{ . }}
           - name: TWITCH_CLIENT_SECRET

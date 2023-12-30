@@ -2,9 +2,9 @@ namespace: chat-stat
 compute: fargate
 channels:
   - swolenesss
-  - cyr
-  - paymoneywubby
-  - mizkif
-  - xqc
-  - squeex
-  - lirik
+  # - cyr
+  # - paymoneywubby
+  # - mizkif
+  # - xqc
+  # - squeex
+  # - lirik

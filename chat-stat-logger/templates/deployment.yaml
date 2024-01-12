@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: chat-stat-logger
-        image: 695434033664.dkr.ecr.us-east-1.amazonaws.com/fomiller-chat-stat-api:latest
+        image: 695434033664.dkr.ecr.us-east-1.amazonaws.com/fomiller-chat-stat-logger:latest
         env:
           # - name: REDIS_HOST
           #   valueFrom:

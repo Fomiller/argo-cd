@@ -14,7 +14,7 @@ spec:
       labels:
         app: chat-stat-api
     spec:
-      serviceAccountName: {{ $.Values.namespace }}
+      serviceAccountName: {{ $.Values.serviceAccount }}
       containers:
       - name: chat-stat-api
         image: "{{ $.Values.image }}:{{ $.Values.image_tag }}"

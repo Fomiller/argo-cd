@@ -4,7 +4,7 @@ metadata:
   name: chat-stat-api
   namespace: {{ $.Values.namespace }}
 spec:
-  replicas: 0
+  replicas: 1
   revisionHistoryLimit: 1
   selector:
     matchLabels:

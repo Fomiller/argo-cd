@@ -4,6 +4,8 @@ metadata:
   name: chat-stat-api
   namespace: {{ $.Values.namespace }}
 spec:
+  nodeSelector:
+    kubernetes.io/arch: amd64
   replicas: 1
   revisionHistoryLimit: 1
   selector:

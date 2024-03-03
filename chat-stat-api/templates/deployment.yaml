@@ -15,6 +15,7 @@ spec:
     metadata:
       labels:
         app: chat-stat-api
+        kubernetes.io/arch: amd64
     spec:
       serviceAccountName: {{ $.Values.serviceAccount }}
       containers:

@@ -15,7 +15,6 @@ spec:
         app: chat-stat-frontend
         kubernetes.io/arch: amd64
     spec:
-      serviceAccountName: {{ $.Values.serviceAccount }}
       nodeSelector:
         kubernetes.io/arch: amd64
       containers:

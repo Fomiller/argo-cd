@@ -1,0 +1,4 @@
+namespace: chat-stat
+serviceAccount: fargate-chat-stat
+image:  695434033664.dkr.ecr.us-east-1.amazonaws.com/fomiller-chat-stat-api
+image_tag: latest

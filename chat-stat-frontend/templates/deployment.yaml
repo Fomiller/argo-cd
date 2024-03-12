@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat-stat-frontend
+  namespace: {{ $.Values.namespace }}
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: chat-stat-frontend
+  template:
+    metadata:
+      labels:
+        app: chat-stat-frontend
+        kubernetes.io/arch: amd64
+    spec:
+      serviceAccountName: {{ $.Values.serviceAccount }}
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      containers:
+      - name: chat-stat-frontend
+        image: "{{ $.Values.image }}:{{ $.Values.image_tag }}"

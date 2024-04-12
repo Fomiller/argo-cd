@@ -11,13 +11,11 @@ spec:
     matchLabels:
       app: chat-stat-logger-{{ . }}
       channel: {{ . }}
-      compute: {{ $.Values.compute }}
   template:
     metadata:
       labels:
         app: chat-stat-logger-{{ . }}
         channel: {{ . }}
-        compute: {{ $.Values.compute }}
     spec:
       containers:
       - name: chat-stat-logger
